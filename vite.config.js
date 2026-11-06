@@ -21,6 +21,7 @@ export default defineConfig(({ command }) => {
       global: 'globalThis',
     },
     root: sourceRoot,
+    envDir: projectRoot,
     build: {
       sourcemap: true,
       rollupOptions: {
