@@ -35,8 +35,7 @@ jobs:
 
       - name: Build
         run: npm run build
-
-                env:
+        env:
           VITE_PIXABAY_API_KEY: ${{ secrets.VITE_PIXABAY_API_KEY }}
 
       - name: Upload Pages artifact
