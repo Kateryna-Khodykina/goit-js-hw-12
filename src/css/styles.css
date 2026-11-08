@@ -78,29 +78,10 @@ body {
   gap: 4px;
 }
 
-.loader {
-  width: 48px;
-  height: 48px;
-  margin: 32px auto;
-  border: 5px solid #e0e0e0;
-  border-bottom-color: #4e75ff;
-  border-radius: 50%;
-  animation: rotation 1s linear infinite;
-}
-
 .is-hidden {
   display: none;
 }
 
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 @media (max-width: 1150px) {
   .gallery {
@@ -141,7 +122,9 @@ body {
 .loader-container {
   width: 100%;
   margin: 32px auto;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
   font-weight: 500;
   color: #2e2f42;
@@ -149,4 +132,14 @@ body {
 
 .loader-container.is-hidden {
   display: none;
+}
+
+.loader-container {
+  width: 100%;
+  text-align: center;
+}
+
+.loader-container p {
+  width: 100%;
+  text-align: center;
 }

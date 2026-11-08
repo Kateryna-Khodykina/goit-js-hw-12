@@ -7,20 +7,14 @@ import {
   clearGallery,
   showLoader,
   hideLoader,
+  showLoadMoreButton,
+  hideLoadMoreButton,
 } from './js/render-functions';
 
 const form = document.querySelector('.form');
 
 const loadMoreBtn = document.querySelector('.load-more');
 
-
-function showLoadMoreButton() {
-  loadMoreBtn.classList.remove('is-hidden');
-}
-
-function hideLoadMoreButton() {
-  loadMoreBtn.classList.add('is-hidden');
-}
 
 let currentPage = 1;
 let currentQuery = '';
@@ -96,7 +90,7 @@ form.addEventListener('submit', async event => {
 currentQuery = query;
 currentPage = 1;
 totalHits = 0;
-loadMoreBtn.classList.add('is-hidden');
+hideLoadMoreButton();
 
 
   clearGallery();
@@ -120,7 +114,14 @@ loadMoreBtn.classList.add('is-hidden');
 totalHits = data.totalHits;
 
 if (currentPage * 15 < totalHits) {
-  loadMoreBtn.classList.remove('is-hidden');
+  showLoadMoreButton();
+} else {
+  hideLoadMoreButton();
+
+  iziToast.info({
+    message: "We're sorry, but you've reached the end of search results.",
+    position: 'topRight',
+  });
 }
 
   } catch (error) {

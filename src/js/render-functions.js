@@ -39,12 +39,25 @@ export function clearGallery() {
   gallery.innerHTML = '';
 }
 
-const loader = document.querySelector('.loader');
+const loader = document.querySelector('.loader-container');
+
 
 export function showLoader() {
-  document.querySelector('.loader-container').classList.remove('is-hidden');
+  loader.classList.remove('is-hidden');
 }
 
 export function hideLoader() {
-  document.querySelector('.loader-container').classList.add('is-hidden');
+  loader.classList.add('is-hidden');
 }
+
+const loadMoreBtn = document.querySelector('.load-more');
+
+export function showLoadMoreButton() {
+  loadMoreBtn.classList.remove('is-hidden');
+}
+
+export function hideLoadMoreButton() {
+  loadMoreBtn.classList.add('is-hidden');
+}
+
+
